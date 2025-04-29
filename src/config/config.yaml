@@ -1,0 +1,31 @@
+project:
+  name: "voice_cloning_vits"
+  output_dir: "outputs/"
+  logs_dir: "logs/"
+
+dataset:
+  name: "ljspeech"
+  path: "data/LJSpeech-1.1/"
+  meta_file_train: "metadata_train.csv"
+  meta_file_val: "metadata_val.csv"
+  sampling_rate: 22050
+  text_cleaner: "phoneme_cleaners"
+
+model:
+  base_model: "tts_models/en/vctk/vits"
+  phonemizer: "pyespeakng"
+  restore_path: null
+
+training:
+  epochs: 500
+  batch_size: 16
+  learning_rate: 0.0001
+  grad_clip: 1.0
+  scheduler: "cosine"
+  mixed_precision: true
+  save_every_n_steps: 1000
+  validate_every_n_steps: 500
+
+inference:
+  text_input: "Mrs. Hudson was a long-suffering woman..."
+  output_audio_path: "outputs/generated_audio/cloned_voice_output.wav"

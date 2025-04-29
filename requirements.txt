@@ -1,0 +1,41 @@
+# Core TTS and Voice Cloning Dependencies
+coqui-tts==0.22.0
+torch==2.1.2
+torchaudio==2.1.2
+torchvision==0.16.2
+
+# Audio processing
+librosa>=0.10.0,<0.11.0  # lock minor version to avoid potential future API changes
+soundfile
+numpy>=1.23,<1.25        # upper-bound numpy to avoid issues with torch extensions
+scipy
+
+# Data handling and utilities
+pandas
+matplotlib>=3.5.0
+pyyaml
+
+# Tokenization and Text Processing
+unidecode
+pyopenjtalk-prebuilt
+jamo
+pypinyin
+jieba
+inflect
+eng_to_ipa
+ko_pron
+cn2an
+indic_transliteration==2.3.37
+num_thai==0.0.5
+opencc-python-reimplemented
+
+# Model utilities
+protobuf
+tensorboard
+
+# Additional tools
+gradio
+demucs
+
+# Whisper (for speech recognition if needed)
+git+https://github.com/openai/whisper.git
